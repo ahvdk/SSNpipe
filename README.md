@@ -1,5 +1,5 @@
-### Installation
-[DOWNLOAD PUBLIC PRE-RELEASE for Windows 64-bit](https://github.com/ahvdk/SSNpipe/releases/download/v.0.1-alpha/SSNpipe_windows.zip)
+### SSNpipe Download
+[PUBLIC PRE-RELEASE for Windows 64-bit](https://github.com/ahvdk/SSNpipe/releases/download/v.0.1-alpha/SSNpipe_windows.zip)
 
 `SSNpipe` is a Python program, independent all-inclusive executable binary files for most popular operating systems are freely available in [release](https://github.com/ahvdk/ssnpipe/releases) page.
 
