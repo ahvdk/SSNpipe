@@ -1,4 +1,9 @@
 # SSNpipe
 SSNpipe: a GUI to Generate Sequence Similarity Networks
 
-Test :)
+### Features
+
+- "Create SSNs"
+- "Refine SSns"
+- "Create Metanodes"
+- "Group Analysis"
