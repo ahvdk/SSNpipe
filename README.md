@@ -1,6 +1,5 @@
 ### SSNpipe v.1.0-beta Download
 Download for [Windows](https://github.com/ahvdk/SSNpipe/releases/download/v.1.0-beta/SSNpipe_windows.zip)
-
 Download for [Linux](https://github.com/ahvdk/SSNpipe/releases/download/v.1.0-beta/SSNpipe_unix.tar.gz)
 
 Download compressed executable file for your operating system
