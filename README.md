@@ -8,7 +8,7 @@
 ## SSNpipe installation instructions
 Download compressed executable file for your operating system.
 
-- For **windows**: Decompress the archive and run the installation executable. 
+- For **Windows**: Decompress the archive and run the installation executable. 
   `SSNpipe` will be setup like any other windows program.
 
 - For **Linux**: Decompress the archive with `tar -zxvf *.tar.gz` and run ./ssnpipe from the decompressed folder.
