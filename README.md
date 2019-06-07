@@ -14,7 +14,5 @@ Download compressed executable file for your operating system.
 - For **Linux**: Decompress the archive with `tar -zxvf *.tar.gz` and run ./ssnpipe from the decompressed folder.
 
 - For **Mac**: Decompress the archive with `tar -zxvf *.tar.gz` or other tools and run ssnpipe from the decompressed folder.
-
   If your security settings does not allow you to run applications from an unidentified developer:
-  
   In the Finder > Press the Control key, then click the ssnpipe icon > Choose Open from the shortcut menu > Click Open.
