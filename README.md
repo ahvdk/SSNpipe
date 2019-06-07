@@ -5,9 +5,13 @@
 - Download for [Mac](https://github.com/ahvdk/SSNpipe/releases/download/v.1.0-beta/ssnpipe_mac.tar.gz)
 - Download for [Linux](https://github.com/ahvdk/SSNpipe/releases/download/v.1.0-beta/ssnpipe_unix.tar.gz)
 
-## SSNpipe installation
+## SSNpipe installation instructions
 Download compressed executable file for your operating system.
 
-- For **windows**: Decompress the zip-file, run the installation executable and `SSNpipe` will be setup like any other windows program.
-- For **Linux**: Decompress it with `tar -zxvf *.tar.gz` and run ./ssnpipe from the decompressed folder.
-- For **Mac**: Decompress it with `tar -zxvf *.tar.gz` or other tools and run ssnpipe from the decompressed folder.
+- For **windows**: Decompress the archive and run the installation executable. `SSNpipe` will be setup like any other windows program.
+
+- For **Linux**: Decompress the archive with `tar -zxvf *.tar.gz` and run ./ssnpipe from the decompressed folder.
+
+- For **Mac**: Decompress the archive with `tar -zxvf *.tar.gz` or other tools and run ssnpipe from the decompressed folder.
+  If your security settings does not allow you to run applications from an unidentified developer:
+  In the Finder > Press the Control key, then click the ssnpipe icon > Choose Open from the shortcut menu > Click Open.
