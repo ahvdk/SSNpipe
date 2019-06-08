@@ -31,7 +31,7 @@ class MyApplication(pygubu.TkApplication):
 
    def _create_ui(self):
       self.builder = builder = pygubu.Builder()
-      builder.add_from_file(resource_path('gui_compressed.ui'))
+      builder.add_from_file(resource_path('gui.ui'))
       self.mainwindow = builder.get_object('mainwindow', self.master)
       self.mainmenu = menu = builder.get_object('mainmenu', self.master)
       self.set_menu(menu)
@@ -62,6 +62,10 @@ class MyApplication(pygubu.TkApplication):
       self.builder.get_object('settingthreads').config(to=get_threads, textvariable=self.num_threads)
       self.num_threads.set(get_threads)
 
+      self.builder.tkvariables["refine_input"].trace('w', self.set_refine_output)
+      self.builder.tkvariables["metanodes_input"].trace('w', self.set_metanodes_output)
+      self.builder.tkvariables["analysis_input"].trace('w', self.set_analysis_output)
+
       # Redirect stdout to log box and log file
 
       sys.stdout = mods.RedirectText(self.logBox)
@@ -91,6 +95,40 @@ class MyApplication(pygubu.TkApplication):
          for scale in ssn.scales[tabs]:
             scale_obj = self.builder.get_object(tabs + "_threshold_" + scale)
             scale_obj.configure(command = lambda x=0, tabs=tabs: self.adjust_max_threshold(x, tabs))
+
+      # Set radio buttons
+      for tabs in ssn.btn_radio:
+         for param in ssn.btn_radio[tabs]:
+            scale_obj = self.builder.get_object(tabs + "_score_" + param)
+            scale_obj.configure(command = lambda tabs=tabs: self.adjust_scale_thresholds(tabs))
+
+      # Set hyperlinks
+      for link in ssn.links:
+         label = self.builder.get_object(link)
+         label.configure(text = ssn.links[link], foreground="blue", cursor="hand2")
+         label.bind("<Button-1>", lambda e, link=link: mods.open_url(ssn.links[link]))
+
+      #Set about window
+      self.builder.get_object("abouttitle").configure(text = ssn.text["name"])
+      self.builder.get_object("aboutversion").configure(text = ssn.text["version"])
+
+
+   def set_refine_output(self, a, b, c):
+      path = self.builder.tkvariables["refine_input"].get()
+      outdir = os.path.dirname(path)
+      self.builder.tkvariables["refine_output_dir"].set(outdir)
+
+
+   def set_metanodes_output(self, a, b, c):
+      path = self.builder.tkvariables["metanodes_input"].get()
+      outdir = os.path.dirname(os.path.dirname(path))
+      self.builder.tkvariables["metanodes_output_dir"].set(outdir)
+
+
+   def set_analysis_output(self, a, b, c):
+      path = self.builder.tkvariables["analysis_input"].get()
+      outdir = os.path.dirname(os.path.dirname(path))
+      self.builder.tkvariables["analysis_output_dir"].set(outdir)
 
 
    def on_exit_clicked(self):
@@ -130,11 +168,11 @@ class MyApplication(pygubu.TkApplication):
          th_max.set(th_min.get())
 
 
-   def adjust_scale_thresholds(self):
-      th_max = self.builder.get_object('ssn_threshold_max')
-      th_min = self.builder.get_object('ssn_threshold_min')
-      th_step = self.builder.get_object('ssn_threshold_step')
-      threshold = self.builder.tkvariables["ssn_score"].get()
+   def adjust_scale_thresholds(self, tab):
+      th_max = self.builder.get_object(tab + '_threshold_max')
+      th_min = self.builder.get_object(tab + '_threshold_min')
+      th_step = self.builder.get_object(tab + '_threshold_step')
+      threshold = self.builder.tkvariables[tab + '_score'].get()
       if (threshold == "ev"):
          min, max, step = 130, 150, 20
       else:
@@ -324,21 +362,30 @@ def set_input_parameters(format, score, threshold_min, tab):
    
    if (score == "ev"):
       app.builder.get_object(tab + '_score_ev').config(state="normal")
-      app.builder.get_object(tab + '_score_ev').select()
+      app.builder.get_object(tab + '_score_ev').invoke()
+      app.builder.get_object(tab + '_score_bs').config(state="disabled")
       th_max, th_step = 150, 20 
    elif (score == "bs"):
       app.builder.get_object(tab + '_score_bs').config(state="normal")
-      app.builder.get_object(tab + '_score_bs').select()
+      app.builder.get_object(tab + '_score_bs').invoke()
+      app.builder.get_object(tab + '_score_ev').config(state="disabled")
       th_max, th_step = 800, 50
    
    if (format == "cs"):
-      app.builder.get_object(tab + '_cytoscape').select()
+      app.builder.get_object(tab + '_cytoscape').config(state="normal")
+      app.builder.get_object(tab + '_cytoscape').invoke()
+      app.builder.get_object(tab + '_pajek').config(state="disabled")
+      app.builder.get_object(tab + '_gephi').config(state="disabled")
    if (format == "pj"):
-      app.builder.get_object(tab + '_pajek').select()
+      app.builder.get_object(tab + '_pajek').config(state="normal")
+      app.builder.get_object(tab + '_pajek').invoke()
+      app.builder.get_object(tab + '_cytoscape').config(state="disabled")
+      app.builder.get_object(tab + '_gephi').config(state="disabled")
    if (format == "gp"):
-      app.builder.get_object(tab + '_gephi').select()
-   if (format == "tl"):
-      app.builder.get_object(tab + '_tulip').select()
+      app.builder.get_object(tab + '_gephi').config(state="normal")
+      app.builder.get_object(tab + '_gephi').invoke()
+      app.builder.get_object(tab + '_pajek').config(state="disabled")
+      app.builder.get_object(tab + '_cytoscape').config(state="disabled")
 
    if ((tab == "ssn") or (tab == "refine") or (tab == "metanodes")):
       app.builder.get_object(tab + '_threshold_max').config(state="normal")
@@ -395,9 +442,9 @@ def check_user_input(state, tab):
             result[1].append(ssn.text_err['filefmt'])
             return result
          try:
-            result[1].append(fields[0])
             result[1].append(fields[1])
-            result[1].append(int(fields[2]))
+            result[1].append(fields[2])
+            result[1].append(int(fields[3]))
          except IndexError:
             result[0] = False
             result[1].append(ssn.text_err['filefmt'])
