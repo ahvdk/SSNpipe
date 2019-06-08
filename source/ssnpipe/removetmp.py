@@ -1,5 +1,5 @@
 import threading
-from shutil import copyfile
+from shutil import rmtree
 from ssnmods import gvars as g
 from ssnmods import (mods, queue)
 from ssnmods import settings as ssn
@@ -12,5 +12,5 @@ class start_clean(threading.Thread):
       
 
    def run(self):
-      rmtree(mods.get_file("tmp"))
+      rmtree(mods.get_folders(g.PARAMS['tab'])['tmp'])
       queue.pop_queue()

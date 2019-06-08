@@ -22,7 +22,7 @@ class start_setup(threading.Thread):
       for folder in folders:
          create_dir(folders[folder])
 
-      if ((g.PARAMS['tab'] == "refine") or (g.PARAMS['tab'] == "metanodes")):
+      if (g.PARAMS['tab'] == "metanodes"):
          new_networks_path = folders['networks'] + "/" + os.path.basename(g.FILES['input'])
          
          try:
