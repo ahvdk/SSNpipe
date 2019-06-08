@@ -12,6 +12,7 @@ import csv
 import networkx as nx
 from ssnmods import settings as ssn
 from ssnmods import queue
+import webbrowser
 
 
 class RedirectText(object):
@@ -260,8 +261,11 @@ def rawincount(infile, delimiter):
    elif (delimiter == ";"):
       return sum( len(re.findall(b'(.*);(.*);', buf)) for buf in bufgen )
 
+def open_url(url):
+    webbrowser.open_new(url)
 
-def get_folders(tab):
+
+def get_folders(tab="none"):
    folder = dict()
    if (tab == "ssn"):
       datetime_now = g.TIMES['current_datetime'].strftime("%Y%m%d_%H%M%S")
@@ -276,7 +280,7 @@ def get_folders(tab):
 
    elif (tab == "analysis"):
       folder['main'] = g.FOLDERS['output']
-      folder['metanodes'] = folder['main'] + "/metanodes"
+      folder['analysis'] = folder['main'] + "/analysis"
 
    folder['tmp'] = folder['main'] + "/tmp"
    folder['networks'] = folder['main'] + "/networks"
@@ -289,10 +293,10 @@ def get_file(filename):
 
    if (filename == "log"):
       datetime_now = g.TIMES['current_datetime'].strftime("%Y%m%d_%H%M%S")
-      file = folder['main'] + "/log_" + datetime_now + ".txt"
+      file = folder['main'] + "/Log_" + datetime_now + ".txt"
    elif (filename == "errorlog"):
       datetime_now = g.TIMES['current_datetime'].strftime("%Y%m%d_%H%M%S")
-      file = folder['main'] + "/errors_" + datetime_now + ".txt"
+      file = folder['main'] + "/Errors_" + datetime_now + ".txt"
    elif (filename == "blastp"):
       file = '{.}.out.txt\\\"'
    elif (filename == "masterfile"):
@@ -310,29 +314,29 @@ def get_file(filename):
    elif (filename == "newhead"):   
       file = folder['tmp'] + "/newhead.fasta"
    elif (filename == "nodetable_cs"):
-      file = folder['main'] + "/nodetable_cs.txt"
+      file = folder['main'] + "/NodeTable_cs.txt"
    elif (filename == "nodetable_gp"):
-      file = folder['main'] + "/nodetable_gp.csv"
+      file = folder['main'] + "/NodeTable_gp.csv"
    elif (filename == "daskin_metanodes"):
       file = folder['tmp'] + "/metanodes_tmp.txt"
    elif (filename == "metanodes"):
       file = folder['tmp'] + "/metanodes.txt"
    elif (filename == "metanodes_info_cs"):
-      file = folder['metanodes'] + "/metanodes_" + str(g.PARAMS['max']) + "_info.txt"
+      file = folder['metanodes'] + "/Metanodes_" + str(g.PARAMS['max']) + "_Info.txt"
    elif (filename == "metanodes_info_gp"):
-      file = folder['metanodes'] + "/metanodes_" + str(g.PARAMS['max']) + "_info.csv"
+      file = folder['metanodes'] + "/Metanodes_" + str(g.PARAMS['max']) + "_Info.csv"
    elif (filename == "analysis"):
-      file = folder['metanodes'] + "/analysis_" + str(g.PARAMS['min']) + "_info.txt"
+      file = folder['analysis'] + "/GROUPS_" + str(g.PARAMS['min']) + "_Info.txt"
    elif (filename == "networks_pj"):
-      file = folder['networks'] + "/pj_" + g.PARAMS['threshold'] + "_%i_.txt"
+      file = folder['networks'] + "/NETWORK_pj_" + g.PARAMS['threshold'] + "_%i_.txt"
    elif (filename == "networks_cs"):
-      file = folder['networks'] + "/cs_" + g.PARAMS['threshold'] + "_%i_.txt"
+      file = folder['networks'] + "/NETWORK_cs_" + g.PARAMS['threshold'] + "_%i_.txt"
    elif (filename == "metanodes_cs"):
-      file = folder['metanodes'] + "/cs_" + g.PARAMS['threshold'] + "_" + str(g.PARAMS['min'])  + "_%i_.txt"
+      file = folder['metanodes'] + "/METANODES-NETWORK_cs_" + g.PARAMS['threshold'] + "_" + str(g.PARAMS['min'])  + "_%i_.txt"
    elif (filename == "networks_gp"):
-      file = folder['networks'] + "/gp_" + g.PARAMS['threshold'] + "_%i_.csv"
+      file = folder['networks'] + "/NETWORK_gp_" + g.PARAMS['threshold'] + "_%i_.csv"
    elif (filename == "metanodes_gp"):
-      file = folder['metanodes'] + "/gp_" + g.PARAMS['threshold'] + "_" + str(g.PARAMS['min'])  + "_%i_.csv"
+      file = folder['metanodes'] + "/METANODES-NETWORKS_gp_" + g.PARAMS['threshold'] + "_" + str(g.PARAMS['min'])  + "_%i_.csv"
    elif (filename == "splitfasta"):
       file = folder['tmp'] + "/in.%i.fasta"
    elif (filename == "listfasta"):

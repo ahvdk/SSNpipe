@@ -3,17 +3,32 @@ text = dict()
 
 #Project text
 text['name'] = "SSNpipe"
-text['version'] = "build 20190603"
-text['citation'] = "Citation: Viborg, A. & Brumer, H. (2019) Title, Journal, X:Y-Z"
-text['subtitle'] = "A Graphical User Interface to Generate Sequence Similarity Networks"
+text['version'] = "v.1.0-beta"
+text['citation'] = "Citation: Viborg, A. & Brumer, H. SSNpipe: a GUI to Simplify the Generation of Sequence Similarity Networks, to be published"
 
 #Tooltips
 tooltip = dict()
 
-tooltip["ssn_title_tt"] = "Create SSNs"
-tooltip["refine_title_tt"] = "Refine SSNs"
-tooltip["metanodes_title_tt"] = "Create Metanodes"
-tooltip["analysis_title_tt"] = "Analysis SSNs"
+tooltip["fasta_input_tt"] = "Input file in FASTA format.\nFASTA alignments are not supported (no dashes in sequences).\nOther special characters outside of FASTA headers are not supported."
+tooltip["master_input_tt"] = "File generated from a previous 'Create SSNs' session, used here as input.\nThis file will be found in the top level of the corresponding Results folder."
+tooltip["metanodes_input_tt"] = "Network file generated from a previous 'Create SSNs' or 'Refine SSNs' sessions, used here as input.\nThis file will be found in 'networks' subfolder of the Results folder."
+tooltip["ssn_description_tt"] = "Free text, written to log file for future reference."
+tooltip["ssn_output_tt"] = "Output folder.\nIndividual network files will be written to the 'networks' subfolder in this directory.\nThe sequence ID file will be written to 'NodeTable_xx.txt'."
+tooltip["refine_output_tt"] = "Output folder set by SSNpipe based on a previous 'Create SSNs' analysis.\nIndividual network files will be written to the 'networks' subfolder in this directory."
+tooltip["metanodes_output_tt"] = "Output folder set by SSNpipe based on a previous 'Create SSNs' analysis.\nMetanode networks will be written to the 'metanodes' subfolder in this directory."
+tooltip["analysis_output_tt"] = "Output folder set by SSNpipe based on a previous 'Create SSNs' analysis.\nGroup analysis file will be written to the 'analysis' subfolder in this directory."
+
+tooltip["ssn_parameter_tt"] = "E-value = 1e-N\nBitscore = N\nBitscore is useful for long, highly similar sequences\nwhen E-value is below 1e-180"
+tooltip["metanodes_parameter_tt"] = "This value is read from the NETWORK.txt input file selected above."
+
+tooltip["settings_threads_tt"] = "The number of threads for parallelization of BLASTP analysis.\nThe maximum number is automatically determined from your computer’s architecture.\nSelecting the maximum number may slow performance of other processes."
+
+tooltip["metanodes_min_tt"] = tooltip["analysis_min_tt"] = tooltip["metanodes_parameter_tt"]
+tooltip["refine_description_tt"] = tooltip["analysis_description_tt"] = tooltip["metanodes_description_tt"] = tooltip["ssn_description_tt"]
+tooltip["refine_parameter_tt"] = tooltip["ssn_parameter_tt"]
+tooltip["analysis_input_tt"] = tooltip["metanodes_input_tt"]
+tooltip["analysis_parameter_tt"] = tooltip["metanodes_parameter_tt"]
+
 
 #Pipeline execution text
 text['date'] = "Date: "
@@ -55,7 +70,7 @@ text['no_networks'] = "Unable to find previous networks!"
 text['lb'] = "\n"
 text['pb'] = "\n\n"
 
-text['intro'] = text['name'] + " " + text['version'] + "\n" + text['subtitle'] + "\n" + text['citation']
+text['intro'] = text['name'] + " " + text['version'] + "\n" + text['citation']
 
 #User error text
 
@@ -70,9 +85,23 @@ text_err['nofmt'] = "No output format specified"
 text_err['isalignment'] = "FASTA alignment files are not supported (one or more of your sequences contains a hyphen (-)"
 text_err['unexpected'] = "\n\n\nUNEXPETCED ERROR, PLEASE SEND LOG AND ERROR FILES TO\nssnpipe@ahv.dk"
 
+#User error text
+
+links = dict()
+
+links['github_source'] = "https://github.com/ahvdk/SSNpipe"
+links['github_wiki'] = "https://github.com/ahvdk/SSNpipe/wiki"
+links['license_url'] = "http://www.gnu.org/licenses/gpl-3.0.html"
+links['dep_rush_link'] = "https://github.com/shenwei356/rush"
+links['dep_tk_link'] = "http://tcl.tk"
+links['dep_blastp_link'] = "https://blast.ncbi.nlm.nih.gov"
+links['ssnpipe_pub_link'] = "http://doi.org"
+links['babbitt_pub_link'] = "http://doi.org/10.1371/journal.pone.0004345"
+
+
 #SETTINGS
 settings = dict()
-settings['edge_limit'] = 30
+settings['edge_limit'] = 1000000
 
 ###
 #DO NOT CHANGE THE BELOW SETTINGS UNLESS YOU KNOW WHAT YOU ARE DOING!
@@ -104,6 +133,7 @@ queue['refine'] = [
             "start_param", "run_param", "end_param",
             "start_sort", "run_sort", "end_sort", 
             "start_ssn", "run_ssn", "end_ssn",
+            "start_clean", "run_clean", "end_clean",
             "finished"
          ]
 
@@ -114,6 +144,7 @@ queue['metanodes'] = [
             "start_metanodes", "run_metanodes", "end_metanodes",
             "start_sort", "run_sort", "end_sort",
             "start_ssn", "run_ssn", "end_ssn",
+            "start_clean", "run_clean", "end_clean",
             "finished"
          ]
 
@@ -122,6 +153,7 @@ queue['analysis'] = [
             "start_setup", "run_setup", "end_setup",
             "start_param", "run_param", "end_param",
             "start_metanodes", "run_metanodes", "end_metanodes",
+            "start_clean", "run_clean", "end_clean",
             "finished"
          ]
 
@@ -155,4 +187,9 @@ tooltips = [
 scales = {
    "ssn":["min", "step", "max"],
    "refine":["min", "step", "max"]
+   }
+
+btn_radio = {
+   "ssn":["bs", "ev"],
+   "refine":["bs", "ev"]
    }
