@@ -29,3 +29,5 @@ class start_master(threading.Thread):
                      out.write(line)
 
       queue.pop_queue()
+
+      return

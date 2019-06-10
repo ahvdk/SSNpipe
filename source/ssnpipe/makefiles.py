@@ -38,6 +38,8 @@ class start_setup(threading.Thread):
 
       queue.pop_queue()
 
+      return
+
 
 def create_dir(path_to):
    try: 

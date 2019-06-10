@@ -58,3 +58,5 @@ class start_param(threading.Thread):
          print(ssn.text['meta_min'] + str(g.PARAMS['min']))  
       
       queue.pop_queue()
+
+      return

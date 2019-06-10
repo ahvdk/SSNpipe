@@ -13,7 +13,7 @@ class start_sort(threading.Thread):
 
    def run(self):
 
-      df = dd.read_csv(mods.get_file("daskin_" + g.PARAMS['tab']), delimiter=";", header=None, usecols=[0,1,g.PARAMS['col']], names=["source", "target", "score"])
+      df = dd.read_csv(mods.get_file("daskin_" + g.PARAMS['tab']), delimiter=";", header=None, usecols=[0,1,g.PARAMS['col']], names=["source", "target", "score"], dtype={'score': 'float64'})
       df = df[df['source'] != df['target']]
       a = df.loc[:, ['source', 'target']].min(axis=1)
       b = df.loc[:, ['source', 'target']].max(axis=1)
@@ -28,3 +28,5 @@ class start_sort(threading.Thread):
       df.to_csv(mods.get_file("tmp"), compute=True, index=False, sep=';', header=None)
 
       queue.pop_queue()
+
+      return

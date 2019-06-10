@@ -14,3 +14,4 @@ class start_clean(threading.Thread):
    def run(self):
       rmtree(mods.get_folders(g.PARAMS['tab'])['tmp'])
       queue.pop_queue()
+      return

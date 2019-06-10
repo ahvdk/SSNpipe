@@ -64,3 +64,5 @@ class start_ssn(threading.Thread):
          print(ssn.text['edge_warning'] % ssn.settings['edge_limit'] + ssn.text['edge_solution'])
 
       queue.pop_queue()
+
+      return
