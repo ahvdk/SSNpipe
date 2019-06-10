@@ -1,7 +1,7 @@
 `SSNpipe` is a Python program, independent all-inclusive executable binary files for most popular operating systems are freely available in [release](https://github.com/ahvdk/ssnpipe/releases) page.
 
 ## SSNpipe v.1.0-beta download
-- Download for [Windows](https://github.com/ahvdk/SSNpipe/releases/download/v.1.0-beta/ssnpipe_windows.zip)
+- Download for [Windows](https://github.com/ahvdk/SSNpipe/releases/download/v.1.0-beta/ssnpipe_windows.zip).
 - Download for [Mac](https://github.com/ahvdk/SSNpipe/releases/download/v.1.0-beta/ssnpipe_mac.tar.gz). Requires [XQuartz](https://www.xquartz.org/).
 - Download for [Linux](https://github.com/ahvdk/SSNpipe/releases/download/v.1.0-beta/ssnpipe_unix.tar.gz). Requires X11 graphics software.
 
