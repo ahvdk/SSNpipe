@@ -101,7 +101,11 @@ class HandleFasta():
 
    
    def split_fasta(infile, num_seqs):
-      split_num = ceil(num_seqs/g.PARAMS['jobs'])
+      if (num_seqs < 1000):
+         split_num = ceil(num_seqs/g.PARAMS['jobs'])
+      else:
+         split_num = 100
+
       record_iter = SeqIO.parse(open(infile),"fasta")
       
       for i, batch in enumerate(HandleFasta.batch_iterator(record_iter, split_num)):
@@ -170,14 +174,12 @@ class FormatOutput():
          if ((init == 0) or (init == 1)):
             out.write("Source" + delimout + "Target" + delimout + "Weight\n")
          for fn in infile:
-            if (g.SSN_QUEUE[0] == "stop"):
-               break
             with open(fn) as f:
                if ((init == 0) or (init == 2)):
                   next(f)
                for line in f:
                   if (g.SSN_QUEUE[0] == "stop"):
-                     break
+                     return
                   if (len(line.rstrip()) != 0):
                      field = line.rstrip().split(delimin)
                      if (len(field) == 3):
@@ -205,14 +207,12 @@ class FormatOutput():
          if ((init == 0) or (init == 1)):
             out.write("Source" + delimout + "Target" + delimout + "Weight\n")         
          for fn in infile:
-            if (g.SSN_QUEUE[0] == "stop"):
-               break
             with open(fn) as f:
                if ((init == 0) or (init == 2)):
                   next(f)
                for line in f:
                   if (g.SSN_QUEUE[0] == "stop"):
-                     break
+                     return
                   if (len(line.rstrip()) != 0):
                      field = line.rstrip().split(delimin)
                      if (field[0] != "0"):
@@ -230,6 +230,8 @@ class FormatOutput():
          with open(get_file("nodetable_cs")) as f:
             next(f)
             for line in f:
+               if (g.SSN_QUEUE[0] == "stop"):
+                  return
                field = line.rstrip().split('\t')
                out.write(str(field[0]) + ' "' + str(field[1]) + '"\n')
                   
@@ -237,6 +239,8 @@ class FormatOutput():
          with open(infile) as f:
             next(f)
             for line in f:
+               if (g.SSN_QUEUE[0] == "stop"):
+                  return
                field = line.rstrip().split('\t')
                if (len(field) == 1):
                   out.write(str(field[0]) + "\n")
