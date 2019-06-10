@@ -21,6 +21,7 @@ from ssnpipe.removetmp import *
 from ssnpipe.metanodes import *
 
 import tkinter as tk
+from tkinter import ttk
 from tkinter import messagebox
 from tkinter import StringVar
 from tkinter import DoubleVar
