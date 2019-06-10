@@ -1667,7 +1667,7 @@
       </object>
     </child>
     <child>
-      <object class="ttk.Spinbox" id="settingthreads">
+      <object class="tk.Spinbox" id="settingthreads">
         <property name="from_">1</property>
         <property name="increment">1</property>
         <property name="textvariable">int:settingthreads</property>
