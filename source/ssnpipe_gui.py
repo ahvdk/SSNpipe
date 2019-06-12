@@ -5,12 +5,13 @@ import psutil
 from glob import glob
 import copy
 import os
+import platform
 
 from ssnmods import gvars as g
 from ssnmods import settings as ssn
-from ssnmods import (mods, queue, tooltip)
+from ssnmods import (mods, queue, tooltip, vscrolledframe)
 
-#Probably not good practice, but it works
+#Probably bad practice, but it works
 from ssnpipe.makefiles import *
 from ssnpipe.setparams import *
 from ssnpipe.blast import *
@@ -34,11 +35,12 @@ class MyApplication(pygubu.TkApplication):
       builder.add_from_file(resource_path('gui.ui'))
       self.mainwindow = builder.get_object('mainwindow', self.master)
       self.mainmenu = menu = builder.get_object('mainmenu', self.master)
+
       self.set_menu(menu)
       self.abouttoplevel = self.builder.get_object('abouttoplevel', self.master)
       self.abouttoplevel.protocol("WM_DELETE_WINDOW", self.on_about_close_clicked)
-      self.abouttoplevel.withdraw()
-      self.inp = self.builder.get_object("ssn_input")
+      self.abouttoplevel.tk.call('wm', 'iconphoto', self.abouttoplevel._w, tk.PhotoImage(file=resource_path('icon.gif')))
+      self.abouttoplevel.title("About: " + ssn.text['name'] + " " + ssn.text['version'])
 
       builder.connect_callbacks(self)
       self.set_title(ssn.text['name'] + " " + ssn.text['version'])
@@ -111,7 +113,6 @@ class MyApplication(pygubu.TkApplication):
       #Set about window
       self.builder.get_object("abouttitle").configure(text = ssn.text["name"])
       self.builder.get_object("aboutversion").configure(text = ssn.text["version"])
-
 
    def set_refine_output(self, a, b, c):
       path = self.builder.tkvariables["refine_input"].get()
@@ -497,11 +498,30 @@ def check_user_input(state, tab):
          result[1].append(ssn.text_err['nofmt'])
 
       return result
-   
+
 
 if __name__ == '__main__':
    root = tk.Tk()
-   app = MyApplication(root)  
-   root.protocol("WM_DELETE_WINDOW", app.abort_x)
    root.tk.call('wm', 'iconphoto', root._w, tk.PhotoImage(file=resource_path('icon.gif')))
+   root.resizable(height = True, width = False)
+   
+   root.columnconfigure(0, weight=1)
+   root.rowconfigure(0, weight=1)
+
+   frame = vscrolledframe.VerticalScrolledFrame(root)
+   frame.grid(sticky='nsew')
+   app = MyApplication(frame)
+   root.protocol("WM_DELETE_WINDOW", app.abort_x)
+
+   if (platform.system() == "Windows"):
+      app.abouttoplevel.lift()
+   elif ((platform.system() == "Linux") or (platform.system() == "Darwin")):
+      root.lower()
+
+   app.mainwindow.update()
+   h = app.mainwindow.winfo_height() + 10
+   w = app.mainwindow.winfo_width() + 25
+   root.geometry(str(w) + 'x' + str(h))
+   root.minsize(w, 300)
+
    root.mainloop()
