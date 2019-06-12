@@ -3,7 +3,7 @@ text = dict()
 
 #Project text
 text['name'] = "SSNpipe"
-text['version'] = "v.1.0-beta"
+text['version'] = "v.1.0.0-beta"
 text['citation'] = "Citation: Viborg, A. & Brumer, H. SSNpipe: a GUI to Simplify the Generation of Sequence Similarity Networks, to be published"
 
 #Tooltips
@@ -56,10 +56,10 @@ text['start_clean'] = "Started: Deleting tmp folder and files"
 text['end_task'] = "Finished"
 text['time_et'] = " - Elapsed time: %s s"
 text['abort'] = "RUN ABORTED BY USER - THIS JOB IS UNFINISHED!"
-text['complete'] = "SSNPipe Run Complete!"
+text['complete'] = "SSNpipe Run Complete!"
 text['time_tt'] = "Total run time: %s s"
 text['prgbar_error'] = "ERROR ON USER INPUT!"
-text['initiating'] = "Please wait - Initiating SSNPipe"
+text['initiating'] = "Please wait - Initiating SSNpipe"
 text['critical'] = "SSNPIPE IS TRYING TO TERMINATE SAFELY - WILL QUIT ASAP - PLEASE WAIT!"
 text['analysis'] = "SSN at threshold %i"
 text['edges'] = " contains %i edge(s)"

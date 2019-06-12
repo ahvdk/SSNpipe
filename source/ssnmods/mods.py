@@ -297,10 +297,10 @@ def get_file(filename):
 
    if (filename == "log"):
       datetime_now = g.TIMES['current_datetime'].strftime("%Y%m%d_%H%M%S")
-      file = folder['main'] + "/Log_" + datetime_now + ".txt"
+      file = folder['main'] + "/Log_" + datetime_now + "_" + g.PARAMS['tab'] + ".txt"
    elif (filename == "errorlog"):
       datetime_now = g.TIMES['current_datetime'].strftime("%Y%m%d_%H%M%S")
-      file = folder['main'] + "/Errors_" + datetime_now + ".txt"
+      file = folder['main'] + "/Errors_" + datetime_now + "_" + g.PARAMS['tab'] + ".txt"
    elif (filename == "blastp"):
       file = '{.}.out.txt\\\"'
    elif (filename == "masterfile"):
@@ -326,9 +326,9 @@ def get_file(filename):
    elif (filename == "metanodes"):
       file = folder['tmp'] + "/metanodes.txt"
    elif (filename == "metanodes_info_cs"):
-      file = folder['metanodes'] + "/Metanodes_" + str(g.PARAMS['max']) + "_Info.txt"
+      file = folder['metanodes'] + "/Metanodes_" + str(g.PARAMS['min']) + "_" + str(g.PARAMS['max']) + "_Info.txt"
    elif (filename == "metanodes_info_gp"):
-      file = folder['metanodes'] + "/Metanodes_" + str(g.PARAMS['max']) + "_Info.csv"
+      file = folder['metanodes'] + "/Metanodes_" + str(g.PARAMS['min']) + "_" + str(g.PARAMS['max']) + "_Info.csv"
    elif (filename == "analysis"):
       file = folder['analysis'] + "/GROUPS_" + str(g.PARAMS['min']) + "_Info.txt"
    elif (filename == "networks_pj"):
