@@ -1,12 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
 <interface>
   <object class="tk.Frame" id="mainwindow">
-    <property name="height">200</property>
-    <property name="width">480</property>
+    <property name="height">700</property>
+    <property name="width">530</property>
     <layout>
       <property name="column">0</property>
       <property name="propagate">True</property>
       <property name="row">0</property>
+      <columns>
+        <column id="0">
+          <property name="minsize">0</property>
+        </column>
+      </columns>
       <rows>
         <row id="0">
           <property name="minsize">0</property>
@@ -15,11 +20,6 @@
           <property name="weight">0</property>
         </row>
       </rows>
-      <columns>
-        <column id="0">
-          <property name="minsize">0</property>
-        </column>
-      </columns>
     </layout>
     <child>
       <object class="ttk.Notebook" id="mainnotebook">
@@ -61,7 +61,7 @@
                 </layout>
                 <child>
                   <object class="tk.Label" id="Label_4">
-                    <property name="font">{DejaVu Sans} 10 {bold}</property>
+                    <property name="font">{Arial} 10 {bold}</property>
                     <property name="height">2</property>
                     <property name="height">2</property>
                     <property name="text" translatable="yes">GENERATE SEQUENCE SIMILARITY NETWORK(S)</property>
@@ -76,6 +76,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="Label_5">
+                    <property name="font">{Arial} 10 {}</property>
                     <property name="height">1</property>
                     <property name="height">1</property>
                     <property name="text" translatable="yes">FASTA file:</property>
@@ -101,6 +102,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="Label_6">
+                    <property name="font">{Arial} 10 {}</property>
                     <property name="height">0</property>
                     <property name="height">0</property>
                     <property name="text" translatable="yes">Results folder:</property>
@@ -126,6 +128,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="ssn_description_label">
+                    <property name="font">{Arial} 10 {}</property>
                     <property name="height">1</property>
                     <property name="height">1</property>
                     <property name="text" translatable="yes">Description:</property>
@@ -138,6 +141,7 @@
                 </child>
                 <child>
                   <object class="tk.Entry" id="ssn_description">
+                    <property name="font">{Arial} 10 {}</property>
                     <property name="textvariable">string:ssn_description</property>
                     <layout>
                       <property name="column">1</property>
@@ -162,7 +166,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="Label_8">
-                    <property name="font">{DejaVu Sans} 10 {bold}</property>
+                    <property name="font">{Arial} 10 {bold}</property>
                     <property name="height">2</property>
                     <property name="height">2</property>
                     <property name="padx">0</property>
@@ -177,6 +181,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="Label_7">
+                    <property name="font">{Arial} 10 {}</property>
                     <property name="height">1</property>
                     <property name="height">1</property>
                     <property name="text" translatable="yes">Parameter:</property>
@@ -215,6 +220,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="Label_9">
+                    <property name="font">{Arial} 10 {}</property>
                     <property name="height">1</property>
                     <property name="height">1</property>
                     <property name="text" translatable="yes">Minimum:</property>
@@ -246,6 +252,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="Label_11">
+                    <property name="font">{Arial} 10 {}</property>
                     <property name="height">1</property>
                     <property name="height">1</property>
                     <property name="text" translatable="yes">Step:</property>
@@ -259,6 +266,7 @@
                 </child>
                 <child>
                   <object class="tk.Scale" id="ssn_threshold_step">
+                    <property name="font">{Arial} 10 {}</property>
                     <property name="from_">0</property>
                     <property name="length">250</property>
                     <property name="orient">horizontal</property>
@@ -277,6 +285,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="Label_10">
+                    <property name="font">{Arial} 10 {}</property>
                     <property name="height">1</property>
                     <property name="height">1</property>
                     <property name="text" translatable="yes">Maximum:</property>
@@ -308,7 +317,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="Label_14">
-                    <property name="font">{DejaVu Sans} 10 {bold}</property>
+                    <property name="font">{Arial} 10 {bold}</property>
                     <property name="height">2</property>
                     <property name="height">2</property>
                     <property name="text" translatable="yes">OUTPUT FORMAT</property>
@@ -469,7 +478,7 @@
                 </layout>
                 <child>
                   <object class="tk.Label" id="Label_27">
-                    <property name="font">{DejaVu Sans} 10 {bold}</property>
+                    <property name="font">{Arial} 10 {bold}</property>
                     <property name="height">2</property>
                     <property name="height">2</property>
                     <property name="text" translatable="yes">REFINE NETWORK THRESHOLD(S)</property>
@@ -484,6 +493,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="Label_29">
+                    <property name="font">{Arial} 10 {}</property>
                     <property name="height">1</property>
                     <property name="height">1</property>
                     <property name="text" translatable="yes">MASTER.txt file:</property>
@@ -509,6 +519,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="Label_45">
+                    <property name="font">{Arial} 10 {}</property>
                     <property name="height">1</property>
                     <property name="height">1</property>
                     <property name="text" translatable="yes">Results folder:</property>
@@ -534,6 +545,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="Label_44">
+                    <property name="font">{Arial} 10 {}</property>
                     <property name="height">1</property>
                     <property name="height">1</property>
                     <property name="text" translatable="yes">Description:</property>
@@ -546,6 +558,7 @@
                 </child>
                 <child>
                   <object class="tk.Entry" id="Entry_4">
+                    <property name="font">{Arial} 10 {}</property>
                     <property name="insertofftime">0</property>
                     <property name="textvariable">string:refine_description</property>
                     <layout>
@@ -559,7 +572,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="Label_31">
-                    <property name="font">{DejaVu Sans} 10 {bold}</property>
+                    <property name="font">{Arial} 10 {bold}</property>
                     <property name="height">2</property>
                     <property name="height">2</property>
                     <property name="padx">0</property>
@@ -574,6 +587,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="Label_38">
+                    <property name="font">{Arial} 10 {}</property>
                     <property name="height">1</property>
                     <property name="height">1</property>
                     <property name="text" translatable="yes">Parameter:</property>
@@ -613,6 +627,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="Label_39">
+                    <property name="font">{Arial} 10 {}</property>
                     <property name="height">1</property>
                     <property name="height">1</property>
                     <property name="text" translatable="yes">Minimum:</property>
@@ -644,6 +659,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="Label_40">
+                    <property name="font">{Arial} 10 {}</property>
                     <property name="height">1</property>
                     <property name="height">1</property>
                     <property name="text" translatable="yes">Step:</property>
@@ -675,6 +691,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="Label_41">
+                    <property name="font">{Arial} 10 {}</property>
                     <property name="height">1</property>
                     <property name="height">1</property>
                     <property name="text" translatable="yes">Maximum:</property>
@@ -706,7 +723,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="Label_42">
-                    <property name="font">{DejaVu Sans} 10 {bold}</property>
+                    <property name="font">{Arial} 10 {bold}</property>
                     <property name="height">2</property>
                     <property name="height">2</property>
                     <property name="text" translatable="yes">OUTPUT FORMAT</property>
@@ -879,7 +896,7 @@
                 </layout>
                 <child>
                   <object class="tk.Label" id="Label_16">
-                    <property name="font">{DejaVu Sans} 10 {bold}</property>
+                    <property name="font">{Arial} 10 {bold}</property>
                     <property name="height">2</property>
                     <property name="height">2</property>
                     <property name="text" translatable="yes">CREATE NETWORK METANODES</property>
@@ -894,6 +911,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="Label_17">
+                    <property name="font">{Arial} 9 {}</property>
                     <property name="height">1</property>
                     <property name="height">1</property>
                     <property name="text" translatable="yes">NETWORK.txt file:</property>
@@ -919,6 +937,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="Label_18">
+                    <property name="font">{Arial} 10 {}</property>
                     <property name="height">1</property>
                     <property name="height">1</property>
                     <property name="text" translatable="yes">Results folder:</property>
@@ -944,6 +963,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="Label_19">
+                    <property name="font">{Arial} 10 {}</property>
                     <property name="height">1</property>
                     <property name="height">1</property>
                     <property name="text" translatable="yes">Description:</property>
@@ -956,6 +976,7 @@
                 </child>
                 <child>
                   <object class="tk.Entry" id="Entry_2">
+                    <property name="font">{Arial} 10 {}</property>
                     <property name="insertofftime">0</property>
                     <property name="textvariable">string:metanodes_description</property>
                     <layout>
@@ -982,7 +1003,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="Label_20">
-                    <property name="font">{DejaVu Sans} 10 {bold}</property>
+                    <property name="font">{Arial} 10 {bold}</property>
                     <property name="height">2</property>
                     <property name="height">2</property>
                     <property name="padx">0</property>
@@ -997,6 +1018,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="Label_21">
+                    <property name="font">{Arial} 10 {}</property>
                     <property name="height">1</property>
                     <property name="height">1</property>
                     <property name="text" translatable="yes">Parameter:</property>
@@ -1037,6 +1059,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="Label_22">
+                    <property name="font">{Arial} 10 {}</property>
                     <property name="height">1</property>
                     <property name="height">1</property>
                     <property name="text" translatable="yes">Network:</property>
@@ -1069,6 +1092,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="Label_23">
+                    <property name="font">{Arial} 10 {}</property>
                     <property name="height">1</property>
                     <property name="height">1</property>
                     <property name="text" translatable="yes">Metanodes:</property>
@@ -1113,7 +1137,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="Label_25">
-                    <property name="font">{DejaVu Sans} 10 {bold}</property>
+                    <property name="font">{Arial} 10 {bold}</property>
                     <property name="height">2</property>
                     <property name="height">2</property>
                     <property name="text" translatable="yes">OUTPUT FORMAT</property>
@@ -1176,9 +1200,10 @@
                     <property name="text" translatable="yes">Create Metanodes</property>
                     <layout>
                       <property name="column">0</property>
-                      <property name="padx">0</property>
+                      <property name="pady">20</property>
                       <property name="propagate">True</property>
                       <property name="row">18</property>
+                      <property name="sticky">e</property>
                     </layout>
                   </object>
                 </child>
@@ -1290,7 +1315,7 @@
                 </layout>
                 <child>
                   <object class="tk.Label" id="Title">
-                    <property name="font">{DejaVu Sans} 10 {bold}</property>
+                    <property name="font">{Arial} 10 {bold}</property>
                     <property name="height">2</property>
                     <property name="height">2</property>
                     <property name="text" translatable="yes">OUTPUT NETWORK GROUP ASSOCIATION</property>
@@ -1305,6 +1330,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="analysis_input_label">
+                    <property name="font">{Arial} 9 {}</property>
                     <property name="height">1</property>
                     <property name="height">1</property>
                     <property name="text" translatable="yes">NETWORK.txt file:</property>
@@ -1330,6 +1356,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="analysis_output_label">
+                    <property name="font">{Arial} 10 {}</property>
                     <property name="height">1</property>
                     <property name="height">1</property>
                     <property name="text" translatable="yes">Results folder:</property>
@@ -1355,6 +1382,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="analysis_description_label">
+                    <property name="font">{Arial} 10 {}</property>
                     <property name="height">1</property>
                     <property name="height">1</property>
                     <property name="text" translatable="yes">Description:</property>
@@ -1367,6 +1395,7 @@
                 </child>
                 <child>
                   <object class="tk.Entry" id="analysis_description">
+                    <property name="font">{Arial} 10 {}</property>
                     <property name="insertofftime">0</property>
                     <property name="textvariable">string:analysis_description</property>
                     <layout>
@@ -1393,7 +1422,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="Label_49">
-                    <property name="font">{DejaVu Sans} 10 {bold}</property>
+                    <property name="font">{Arial} 10 {bold}</property>
                     <property name="height">2</property>
                     <property name="height">2</property>
                     <property name="padx">0</property>
@@ -1408,6 +1437,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="Label_50">
+                    <property name="font">{Arial} 10 {}</property>
                     <property name="height">1</property>
                     <property name="height">1</property>
                     <property name="text" translatable="yes">Parameter:</property>
@@ -1448,6 +1478,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="Label_51">
+                    <property name="font">{Arial} 10 {}</property>
                     <property name="height">1</property>
                     <property name="height">1</property>
                     <property name="text" translatable="yes">Network:</property>
@@ -1492,7 +1523,7 @@
                 </child>
                 <child>
                   <object class="tk.Label" id="Label_54">
-                    <property name="font">{DejaVu Sans} 10 {bold}</property>
+                    <property name="font">{Arial} 10 {bold}</property>
                     <property name="height">2</property>
                     <property name="height">2</property>
                     <property name="text" translatable="yes">OUTPUT FORMAT</property>
@@ -1642,7 +1673,7 @@
     </child>
     <child>
       <object class="tk.Label" id="Label_2">
-        <property name="font">{DejaVu Sans} 10 {bold}</property>
+        <property name="font">{Arial} 10 {bold}</property>
         <property name="height">2</property>
         <property name="height">2</property>
         <property name="text" translatable="yes">SETTINGS</property>
@@ -1655,11 +1686,13 @@
     </child>
     <child>
       <object class="tk.Label" id="Label_3">
+        <property name="font">{Arial} 10 {}</property>
         <property name="height">1</property>
         <property name="height">1</property>
         <property name="text" translatable="yes"># Threads:</property>
         <layout>
           <property name="column">0</property>
+          <property name="padx">10</property>
           <property name="propagate">True</property>
           <property name="row">45</property>
           <property name="sticky">w</property>
@@ -1668,6 +1701,7 @@
     </child>
     <child>
       <object class="ttk.Spinbox" id="settingthreads">
+        <property name="font">{Arial} 10 {}</property>
         <property name="from_">1</property>
         <property name="increment">1</property>
         <property name="textvariable">int:settingthreads</property>
@@ -1676,20 +1710,6 @@
           <property name="column">0</property>
           <property name="propagate">True</property>
           <property name="row">45</property>
-        </layout>
-      </object>
-    </child>
-    <child>
-      <object class="tk.Text" id="log_box">
-        <property name="background">#d9d9d9</property>
-        <property name="height">12</property>
-        <property name="selectborderwidth">0</property>
-        <property name="width">20</property>
-        <layout>
-          <property name="column">0</property>
-          <property name="propagate">True</property>
-          <property name="row">48</property>
-          <property name="sticky">nsew</property>
         </layout>
       </object>
     </child>
@@ -1709,6 +1729,7 @@
     </child>
     <child>
       <object class="ttk.Label" id="progress_label">
+        <property name="font">{Arial} 10 {}</property>
         <property name="text" translatable="yes">-</property>
         <property name="textvariable">string:progress_label</property>
         <layout>
@@ -1720,7 +1741,7 @@
     </child>
     <child>
       <object class="tk.Label" id="Label_43">
-        <property name="font">{DejaVu Sans} 10 {bold}</property>
+        <property name="font">{Arial} 10 {bold}</property>
         <property name="height">2</property>
         <property name="height">2</property>
         <property name="text" translatable="yes">LOG FILE</property>
@@ -1732,37 +1753,50 @@
       </object>
     </child>
     <child>
-      <object class="tk.Scrollbar" id="yscrollbar">
-        <property name="orient">vertical</property>
-        <property name="width">15</property>
-        <layout>
-          <property name="column">1</property>
-          <property name="propagate">True</property>
-          <property name="row">48</property>
-          <property name="sticky">e</property>
-        </layout>
-      </object>
-    </child>
-    <child>
       <object class="ttk.Frame" id="framesizer">
-        <property name="height">0</property>
-        <property name="width">480</property>
         <layout>
           <property name="column">0</property>
-          <property name="propagate">False</property>
-          <property name="row">51</property>
+          <property name="propagate">True</property>
+          <property name="row">48</property>
           <property name="sticky">nsew</property>
-          <rows>
-            <row id="0">
-              <property name="weight">1</property>
-            </row>
-          </rows>
           <columns>
             <column id="0">
               <property name="weight">1</property>
             </column>
           </columns>
+          <rows>
+            <row id="0">
+              <property name="weight">1</property>
+            </row>
+          </rows>
         </layout>
+        <child>
+          <object class="tk.Text" id="log_box">
+            <property name="background">#d9d9d9</property>
+            <property name="font">{Arial} 10 {}</property>
+            <property name="height">10</property>
+            <property name="selectborderwidth">0</property>
+            <property name="width">20</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">48</property>
+              <property name="sticky">nsew</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Scrollbar" id="yscrollbar">
+            <property name="orient">vertical</property>
+            <property name="width">15</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="propagate">True</property>
+              <property name="row">48</property>
+              <property name="sticky">nsw</property>
+            </layout>
+          </object>
+        </child>
       </object>
     </child>
     <child>
@@ -1811,6 +1845,7 @@
   </object>
   <object class="tk.Toplevel" id="abouttoplevel">
     <property name="height">200</property>
+    <property name="resizable">none</property>
     <property name="title" translatable="yes">About</property>
     <property name="width">200</property>
     <child>
@@ -1843,7 +1878,7 @@
             </layout>
             <child>
               <object class="ttk.Label" id="abouttitle">
-                <property name="font">{DejaVu Sans} 16 {bold}</property>
+                <property name="font">{Arial} 16 {bold}</property>
                 <property name="text" translatable="yes">SSNpipe</property>
                 <property name="textvariable">string:abouttitle</property>
                 <layout>
@@ -1856,7 +1891,7 @@
             </child>
             <child>
               <object class="ttk.Label" id="aboutversion">
-                <property name="font">{DejaVu Sans} 10 {}</property>
+                <property name="font">{Arial} 10 {}</property>
                 <property name="text" translatable="yes">v.1.0-beta</property>
                 <layout>
                   <property name="column">0</property>
@@ -1868,7 +1903,7 @@
             </child>
             <child>
               <object class="ttk.Label" id="aboutinfo">
-                <property name="font">{DejaVu Sans} 10 {bold}</property>
+                <property name="font">{Arial} 10 {bold}</property>
                 <property name="justify">center</property>
                 <property name="text" translatable="yes">
 SSNpipe: a GUI to simplify the generation 
@@ -1884,7 +1919,7 @@ of Sequence Similarity Networks
             </child>
             <child>
               <object class="ttk.Label" id="usessn">
-                <property name="font">{DejaVu Sans} 10 {bold}</property>
+                <property name="font">{Arial} 10 {bold}</property>
                 <property name="justify">left</property>
                 <property name="text" translatable="yes">If you use SSNpipe,</property>
                 <property name="textvariable">string:aboutplease</property>
@@ -1899,7 +1934,7 @@ of Sequence Similarity Networks
             </child>
             <child>
               <object class="ttk.Label" id="aboutcitation">
-                <property name="font">{DejaVu Sans} 10 {bold}</property>
+                <property name="font">{Arial} 10 {bold}</property>
                 <property name="justify">left</property>
                 <property name="text" translatable="yes">Viborg &amp; Brumer, to be published</property>
                 <property name="textvariable">string:aboutcitation</property>
@@ -1915,7 +1950,7 @@ of Sequence Similarity Networks
             </child>
             <child>
               <object class="ttk.Label" id="pleasecite">
-                <property name="font">{DejaVu Sans} 10 {bold}</property>
+                <property name="font">{Arial} 10 {bold}</property>
                 <property name="text" translatable="yes">please cite:
 </property>
                 <layout>
@@ -1929,7 +1964,7 @@ of Sequence Similarity Networks
             </child>
             <child>
               <object class="ttk.Label" id="ssnpipe_pub_link">
-                <property name="font">{DejaVu Sans} 10 {bold}</property>
+                <property name="font">{Arial} 10 {bold}</property>
                 <property name="text" translatable="yes">http://doi.org/</property>
                 <layout>
                   <property name="column">1</property>
@@ -1941,7 +1976,7 @@ of Sequence Similarity Networks
             </child>
             <child>
               <object class="ttk.Label" id="background">
-                <property name="font">{DejaVu Sans} 10 {}</property>
+                <property name="font">{Arial} 10 {}</property>
                 <property name="text" translatable="yes">For background information</property>
                 <layout>
                   <property name="column">0</property>
@@ -1954,7 +1989,7 @@ of Sequence Similarity Networks
             </child>
             <child>
               <object class="ttk.Label" id="Label_28">
-                <property name="font">{DejaVu Sans} 10 {}</property>
+                <property name="font">{Arial} 10 {}</property>
                 <property name="text" translatable="yes">on SSN analysis see:
 </property>
                 <layout>
@@ -1968,7 +2003,7 @@ of Sequence Similarity Networks
             </child>
             <child>
               <object class="ttk.Label" id="babbittpub">
-                <property name="font">{DejaVu Sans} 10 {}</property>
+                <property name="font">{Arial} 10 {}</property>
                 <property name="text" translatable="yes">Atkinson, Morris, Ferrin &amp; Babbitt (2009) PLOS ONE, 4, e4345</property>
                 <layout>
                   <property name="column">1</property>
@@ -1980,7 +2015,7 @@ of Sequence Similarity Networks
             </child>
             <child>
               <object class="ttk.Label" id="babbitt_pub_link">
-                <property name="font">{DejaVu Sans} 10 {}</property>
+                <property name="font">{Arial} 10 {}</property>
                 <property name="text" translatable="yes">http://doi.org/10.1371/journal.pone.0004345</property>
                 <layout>
                   <property name="column">1</property>
@@ -1992,7 +2027,7 @@ of Sequence Similarity Networks
             </child>
             <child>
               <object class="ttk.Label" id="aboutgithub">
-                <property name="font">{DejaVu Sans} 10 {}</property>
+                <property name="font">{Arial} 10 {}</property>
                 <property name="justify">center</property>
                 <property name="text" translatable="yes">Source code and releases:</property>
                 <layout>
@@ -2006,7 +2041,7 @@ of Sequence Similarity Networks
             </child>
             <child>
               <object class="ttk.Label" id="github_source">
-                <property name="font">{DejaVu Sans} 10 {}</property>
+                <property name="font">{Arial} 10 {}</property>
                 <property name="text" translatable="yes">https://github.com/ahvdk/SSNpipe</property>
                 <layout>
                   <property name="column">1</property>
@@ -2018,7 +2053,7 @@ of Sequence Similarity Networks
             </child>
             <child>
               <object class="ttk.Label" id="github_documentation">
-                <property name="font">{DejaVu Sans} 10 {}</property>
+                <property name="font">{Arial} 10 {}</property>
                 <property name="text" translatable="yes">Documentation and user guide:</property>
                 <layout>
                   <property name="column">0</property>
@@ -2031,7 +2066,7 @@ of Sequence Similarity Networks
             </child>
             <child>
               <object class="ttk.Label" id="github_wiki">
-                <property name="font">{DejaVu Sans} 10 {}</property>
+                <property name="font">{Arial} 10 {}</property>
                 <property name="text" translatable="yes">https://github.com/ahvdk/SSNpipe/wiki</property>
                 <layout>
                   <property name="column">1</property>
@@ -2043,7 +2078,7 @@ of Sequence Similarity Networks
             </child>
             <child>
               <object class="ttk.Label" id="aboutlicens">
-                <property name="font">{DejaVu Sans} 10 {}</property>
+                <property name="font">{Arial} 10 {}</property>
                 <property name="text" translatable="yes">
 This program comes with 
 ABSOLUTELY NO WARRANTY
@@ -2059,7 +2094,7 @@ for details, visit:</property>
             </child>
             <child>
               <object class="ttk.Label" id="license_url">
-                <property name="font">{DejaVu Sans} 10 {}</property>
+                <property name="font">{Arial} 10 {}</property>
                 <property name="text" translatable="yes">http://www.gnu.org/licenses/gpl-3.0.html</property>
                 <layout>
                   <property name="column">1</property>
@@ -2071,7 +2106,7 @@ for details, visit:</property>
             </child>
             <child>
               <object class="ttk.Label" id="dependencies">
-                <property name="font">{DejaVu Sans} 10 {}</property>
+                <property name="font">{Arial} 10 {}</property>
                 <property name="text" translatable="yes">
 SSNpipe includes the following dependencies in this distribution:
 </property>
@@ -2101,7 +2136,7 @@ SSNpipe includes the following dependencies in this distribution:
             </child>
             <child>
               <object class="ttk.Label" id="dep_tk">
-                <property name="font">{DejaVu Sans} 10 {}</property>
+                <property name="font">{Arial} 10 {}</property>
                 <property name="text" translatable="yes">Python Tk module: </property>
                 <layout>
                   <property name="column">0</property>
@@ -2114,7 +2149,7 @@ SSNpipe includes the following dependencies in this distribution:
             </child>
             <child>
               <object class="ttk.Label" id="dep_blastp">
-                <property name="font">{DejaVu Sans} 10 {}</property>
+                <property name="font">{Arial} 10 {}</property>
                 <property name="text" translatable="yes">BLASTP</property>
                 <layout>
                   <property name="column">0</property>
@@ -2127,7 +2162,7 @@ SSNpipe includes the following dependencies in this distribution:
             </child>
             <child>
               <object class="ttk.Label" id="dep_rush">
-                <property name="font">{DejaVu Sans} 10 {}</property>
+                <property name="font">{Arial} 10 {}</property>
                 <property name="text" translatable="yes">rush</property>
                 <layout>
                   <property name="column">0</property>
@@ -2140,7 +2175,7 @@ SSNpipe includes the following dependencies in this distribution:
             </child>
             <child>
               <object class="ttk.Label" id="dep_rush_link">
-                <property name="font">{DejaVu Sans} 10 {}</property>
+                <property name="font">{Arial} 10 {}</property>
                 <property name="text" translatable="yes">https://github.com/shenwei356/rush</property>
                 <layout>
                   <property name="column">1</property>
@@ -2152,7 +2187,7 @@ SSNpipe includes the following dependencies in this distribution:
             </child>
             <child>
               <object class="ttk.Label" id="dep_tk_link">
-                <property name="font">{DejaVu Sans} 10 {}</property>
+                <property name="font">{Arial} 10 {}</property>
                 <property name="text" translatable="yes">http://tcl.tk</property>
                 <layout>
                   <property name="column">1</property>
@@ -2164,7 +2199,7 @@ SSNpipe includes the following dependencies in this distribution:
             </child>
             <child>
               <object class="ttk.Label" id="dep_blastp_link">
-                <property name="font">{DejaVu Sans} 10 {}</property>
+                <property name="font">{Arial} 10 {}</property>
                 <property name="text" translatable="yes">https://blast.ncbi.nlm.nih.gov</property>
                 <layout>
                   <property name="column">1</property>
