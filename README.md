@@ -3,7 +3,7 @@
 ## SSNpipe v.1.0-beta download
 - Download for [Windows](https://github.com/ahvdk/SSNpipe/releases/download/v.1.0-beta/ssnpipe_windows.zip) (Windows 7 or newer).
 - Download for [Mac](https://github.com/ahvdk/SSNpipe/releases/download/v.1.0-beta/ssnpipe_mac.tar.gz) (Mac OS High Sierra, 10.13, or newer). Requires the X Window System ([XQuartz](https://www.xquartz.org/)).
-- Download for [Linux](https://github.com/ahvdk/SSNpipe/releases/download/v.1.0-beta/ssnpipe_unix.tar.gz). Requires the X Window System (X11).
+- Download for [Linux](https://github.com/ahvdk/SSNpipe/releases/download/v.1.0-beta/ssnpipe_unix.tar.gz) (Linux kernel 4.4 or newer). Requires the X Window System (X11).
 
 ## SSNpipe installation instructions
 Download compressed executable file for your operating system.
