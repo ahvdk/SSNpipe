@@ -3,6 +3,7 @@
 ## SSNpipe v.1.0.0-beta download
 - Download for [Windows](https://github.com/ahvdk/SSNpipe/releases/download/v.1.0-beta/ssnpipe_windows.zip) (Windows 7 or newer).
 - Download for [Mac](https://github.com/ahvdk/SSNpipe/releases/download/v.1.0-beta/ssnpipe_mac.zip) (Mac OS High Sierra, 10.13, or newer).
+  (Please be aware that SSNpipe and all python Tkinter applications are unable to run on MacOS Mojave 10.14.6, due to an unidentified bug in the MacOS system. This issue should be patched in the soon to be released MacOS Catalina 10.15, [click here](https://discussions.apple.com/thread/250549297) for more information).
 - Download for [Linux](https://github.com/ahvdk/SSNpipe/releases/download/v.1.0-beta/ssnpipe_unix.tar.gz) (Linux kernel 4.4 or newer).
 
 ## SSNpipe installation instructions
