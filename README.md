@@ -1,4 +1,4 @@
-`SSNpipe` is a Python program, independent all-inclusive executable binary files for most popular operating systems are freely available in [release](https://github.com/ahvdk/ssnpipe/releases) page.
+`SSNpipe` is a Python program, and independent all-inclusive executable binary files for most popular operating systems are freely available in [release](https://github.com/ahvdk/ssnpipe/releases) page.
 
 ## SSNpipe v.1.0.0-beta download
 - Download for [Windows](https://github.com/ahvdk/SSNpipe/releases/download/v.1.0-beta/ssnpipe_windows.zip) (Windows 7 or newer).
