@@ -1,6 +1,6 @@
 `SSNpipe` is a Python program, and independent all-inclusive executable binary files for most popular operating systems are freely available in [release](https://github.com/ahvdk/ssnpipe/releases) page.
 
-## SSNpipe v.1.0.0-beta download
+## SSNpipe download
 - Download for [Windows](https://github.com/ahvdk/SSNpipe/releases/download/v.1.0-beta/ssnpipe_windows.zip) (Windows 7 or newer).
 - Download for [Linux](https://github.com/ahvdk/SSNpipe/releases/download/v.1.0-beta/ssnpipe_unix.tar.gz) (Linux kernel 4.4 or newer).
 - Download for [Mac](https://github.com/ahvdk/SSNpipe/releases/download/v.1.0-beta/ssnpipe_mac.zip) (Mac OS High Sierra, 10.13, or newer).
